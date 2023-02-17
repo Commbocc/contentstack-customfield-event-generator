@@ -5,7 +5,7 @@ import { RRule, RRuleSet } from 'rrule/dist/esm'
  * @returns
  */
 export const useRRule = (rule: IRRuleFields) => {
-  const { $dev } = useNuxtApp()
+  // const { $dev } = useNuxtApp()
   const { extensionField } = useContentstackExtension()
 
   const rrule = computed<RRule | undefined>(() => {
@@ -23,7 +23,7 @@ export const useRRule = (rule: IRRuleFields) => {
       bymonth: rule.bymonth?.length ? rule.bymonth : undefined,
       bysetpos: rule.bysetpos,
 
-      tzid: !$dev ? extensionField.config.timezone : 'America/New_York',
+      tzid: extensionField.config.timezone,
     })
   })
 

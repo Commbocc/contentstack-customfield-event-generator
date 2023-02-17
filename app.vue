@@ -14,7 +14,7 @@ onMounted(async () => {
       </div>
 
       <!-- config check -->
-      <div v-else-if="!$dev && !configIsValid">Invalid Configuration</div>
+      <div v-else-if="!configIsValid">Invalid Configuration</div>
 
       <!-- app -->
       <template v-else>

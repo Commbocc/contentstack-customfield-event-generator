@@ -4,7 +4,9 @@ import { DateTime } from 'luxon'
 export const extensionField = reactive<IExtensionField>({
   stack: null,
   eventEntry: null,
-  config: {},
+  config: {
+    timezone: DateTime.local().zoneName,
+  },
   fieldData: {
     ruleSets: [],
     timezone: DateTime.local().zoneName,
@@ -14,6 +16,7 @@ export const extensionField = reactive<IExtensionField>({
 const configIsValid = computed<boolean>(() => {
   for (const key of [
     // required config keys go here
+    'timezone',
   ]) {
     if (!extensionField.config.hasOwnProperty(key)) return false
   }
