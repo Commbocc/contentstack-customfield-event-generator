@@ -112,7 +112,7 @@ onMounted(() => {
 
     <!-- set position -->
     <div class="mb-3 w-75">
-      <label>Set Posiiton</label>
+      <label>Set Position</label>
       <input type="number" v-model="fields.bysetpos" />
       <small>
         Corresponds to the nth occurence (i.e. 3 for third, -2 for second to
